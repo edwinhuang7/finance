@@ -1,0 +1,10 @@
+{% extends "layout.html" %} {% block title %} Register {% endblock %} {% block main %}
+<form input action="/quote" method="post">
+  <div class="form-element">
+    <input autocomplete="off" autofocus name="symbol" placeholder="Stock symbol" type="text" />
+  </div>
+  <div class="form-element">
+    <button type="submit" class="btn btn-primary" value="Register">Submit</button>
+  </div>
+</form>
+{% endblock %}

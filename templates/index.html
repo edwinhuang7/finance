@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+<div>
+    <h2>Hello {{ username }},<br> Here is your stock portfolio .</h2>
+    
+</div>
+<div class="container">
+<table class = "table">
+    <thead>
+        <tr>
+            <th>Symbol</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>TOTAL</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for stock in stocks %}
+        <tr>
+            <td>{{  stock["symbol"]  }}</td>
+            <td>{{  stock["totalShares"]  }}</td>
+            <td>{{  stock["price"]  }}</td>
+            <td>{{  stock["totalShares"] * stock["price"]  }}</td>
+        </tr>
+
+        {% endfor %}
+        <tr>
+            <td>CASH</td>
+            <td></td>
+            <td></td>
+            <td>{{  cash  }}</td>
+        </tr>
+        <tr>
+            <td>TOTAL</td>
+            <td></td>
+            <td></td>
+            <td>{{  total  }}</td>
+        </tr>
+
+    </tbody>
+    <tfoot>
+        <tr></tr>
+    </tfoot>
+</div>
+
+
+{% endblock %}
+
+
